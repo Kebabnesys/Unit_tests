@@ -48,4 +48,36 @@ public class ExampleUnitTest {
         int actualValue = Counter.countWords(givenString);
         assertEquals( expectedValue, actualValue);
     }
+
+    @Test
+    public void Test08_TwoSentences() {
+        String givenString = "Where is everyone going? Bingo?";
+        int expectedValue = 2;
+        int actualValue = Counter.countSentences(givenString);
+        assertEquals( expectedValue, actualValue);
+    }
+
+    @Test
+    public void Test09_Number() {
+        String givenString = "67420";
+        int expectedValue = 5;
+        int actualValue = Counter.countNumbers(givenString);
+        assertEquals( expectedValue, actualValue);
+    }
+
+    @Test
+    public void Test10_CharSpaces() {
+        String givenString = "    ";
+        int expectedValue = 4;
+        int actualValue = Counter.countChars(givenString);
+        assertEquals( expectedValue, actualValue);
+    }
+
+    @Test
+    public void Test11_EmptySentence() {
+        String givenString = "";
+        int expectedValue = 0;
+        int actualValue = Counter.countSentences(givenString);
+        assertEquals( expectedValue, actualValue);
+    }
 }
