@@ -11,10 +11,41 @@ import static org.junit.Assert.*;
  */
 public class ExampleUnitTest {
     @Test
-    public void Test01_EmptyString() {
+    public void Test01_EmptyChar() {
         String givenString = "";
         int expectedValue = 0;
         int actualValue = Counter.countChars(givenString);
+        assertEquals( expectedValue, actualValue);
+    }
+    @Test
+    public void Test03_notEmptyChar() {
+        String givenString = "e";
+        int expectedValue = 1;
+        int actualValue = Counter.countChars(givenString);
+        assertEquals( expectedValue, actualValue);
+    }
+
+    @Test
+    public void Test05_null() {
+        String givenString = null;
+        int expectedValue = 0;
+        int actualValue = Counter.countChars(givenString);
+        assertEquals( expectedValue, actualValue);
+    }
+
+    @Test
+    public void Test06_CoupleWords() {
+        String givenString = "labas labs viso";
+        int expectedValue = 3;
+        int actualValue = Counter.countWords(givenString);
+        assertEquals( expectedValue, actualValue);
+    }
+
+    @Test
+    public void Test07_EmptyWords() {
+        String givenString = "";
+        int expectedValue = 0;
+        int actualValue = Counter.countWords(givenString);
         assertEquals( expectedValue, actualValue);
     }
 }
